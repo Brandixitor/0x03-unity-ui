@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Pickup")
         {
             score++;
-            Debug.Log($"Score: {score}");
+            /// Debug.Log($"Score: {score}");
             Destroy(other.gameObject);
         }
 

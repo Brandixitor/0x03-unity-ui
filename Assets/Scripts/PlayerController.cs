@@ -2,18 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {   
-    public Rigidbody rb; // Rigidbody variable.
-    public float speed = 1000f; // Player speed.
+    /// <summary> Rigidbody of the player. </summary>
+    public Rigidbody rb;
+    
+    /// <summary> Movement speed of the player. </summary>
+    public float speed = 1000f;
+    
     private int score; // Score of the player
-    public int health = 5; // Health of the player.
+    
+    /// <summary> Health of the player. </summary>
+    public int health = 5;
+
+    /// <summary> Score of the player. </summary>
+    public Text scoreText;
+    
 
 
     // Update is called once per frame
     void Update()
     {
+        /// Updates the score to the UI.
+        SetScoreText();
+
+
         // GetAxis Inputs.
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -61,5 +76,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("You win!");
         }
 
+    }
+
+
+
+    void SetScoreText()
+    {
+        this.scoreText.text = $"score: {score}";
     }
 }

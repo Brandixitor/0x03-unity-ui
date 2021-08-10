@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         SetScoreText();
 
         /// Updates the health to the UI.
-        SetHealthText()
+        SetHealthText();
 
 
         // GetAxis Inputs.
@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Trap")
         {
             health--;
-            Debug.Log($"Health: {health}");
+            /// Debug.Log($"Health: {health}"); /// removed and replaced witha UI.
         }
 
 

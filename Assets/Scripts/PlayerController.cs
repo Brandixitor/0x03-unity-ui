@@ -22,9 +22,20 @@ public class PlayerController : MonoBehaviour
 
     /// <summary> Health of the player. </summary>
     public Text healthText;
+
+    private GameObject WinLoseBG; /// Displays victory or lose.
     
 
 
+    // Start is called before the first frame update
+    void Start()
+    {
+      WinLoseBG = GameObject.Find("Canvas").transform.GetChild(2).gameObject;
+    }
+    
+    
+    
+    
     // Update is called once per frame
     void Update()
     {
@@ -79,7 +90,12 @@ public class PlayerController : MonoBehaviour
         // Condition to let the player know that they've won upon touching the finish line.
         if (other.tag == "Goal")
         {
-            Debug.Log("You win!");
+            /// Debug.Log("You win!"); /// removed and replaced with a UI.
+            WinLoseBG.SetActive(true);
+            WinLoseBG.transform.GetChild(0).GetComponent<Text>().text = "You Win!";
+            WinLoseBG.transform.GetChild(0).GetComponent<Text>().color = Color.black;
+            WinLoseBG.GetComponent<Image>().color = Color.green;
+            StartCoroutine(LoadScene(3));
         }
 
     }
@@ -96,4 +112,15 @@ public class PlayerController : MonoBehaviour
     {
         this.healthText.text = $"health: {health}";
     }
+
+
+/// <summary> Coroutine to reload the scene after number of seconds. </summary>
+    /// <param name="seconds">Number of seconds before reloading the scene</param>
+    /// <returns></returns>
+    IEnumerator LoadScene(float seconds){
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
 }

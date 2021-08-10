@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
         /// Updates the score to the UI.
         SetScoreText();
 
+        /// Updates the health to the UI.
+        SetHealthText()
+
 
         // GetAxis Inputs.
         float x = Input.GetAxis("Horizontal");
@@ -83,8 +86,14 @@ public class PlayerController : MonoBehaviour
 
 
 
-    void SetScoreText()
+    void SetScoreText() /// Method to manage the score UI.
     {
         this.scoreText.text = $"score: {score}";
+    }
+
+
+    void SetHealthText() /// Method to manage the health UI.
+    {
+        this.healthText.text = $"health: {health}";
     }
 }

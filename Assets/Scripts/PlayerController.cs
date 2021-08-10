@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Trap")
         {
             health--;
-            /// Debug.Log($"Health: {health}"); /// removed and replaced witha UI.
+            /// Debug.Log($"Health: {health}"); /// removed and replaced with a UI.
         }
 
 

@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
 
     /// <summary> Score of the player. </summary>
     public Text scoreText;
+
+    /// <summary> Health of the player. </summary>
+    public Text healthText;
     
 
 

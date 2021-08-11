@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
             health = 5;
             score = 0;
             Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
+           /// SceneManager.LoadScene(scene.name);
             
         }
 
@@ -130,6 +130,5 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(seconds);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
 
 }

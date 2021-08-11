@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitMaze()
     {
-
+        Application.Quit();
+        Debug.Log("Quit Game");
     }
 }

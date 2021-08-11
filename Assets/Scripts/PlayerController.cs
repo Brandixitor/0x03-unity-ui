@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        esc_pause();
         /// Updates the score to the UI.
         SetScoreText();
 
@@ -129,6 +130,15 @@ public class PlayerController : MonoBehaviour
     IEnumerator LoadScene(float seconds){
         yield return new WaitForSeconds(seconds);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
+    public void esc_pause()
+    {
+        if (Input.GetButton("Cancel") == true)
+        { 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
     }
 
 }

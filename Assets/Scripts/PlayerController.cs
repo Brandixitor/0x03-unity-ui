@@ -84,6 +84,15 @@ public class PlayerController : MonoBehaviour
         {
             health--;
             /// Debug.Log($"Health: {health}"); /// removed and replaced with a UI.
+            
+            if (health == 0)
+            {
+            WinLoseBG.SetActive(true);
+            WinLoseBG.transform.GetChild(0).GetComponent<Text>().text = "Game Over!";
+            WinLoseBG.transform.GetChild(0).GetComponent<Text>().color = Color.white;
+            WinLoseBG.GetComponent<Image>().color = Color.red;
+            StartCoroutine(LoadScene(3));
+            }
         }
 
 

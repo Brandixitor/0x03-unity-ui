@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         // Condition to reset the score upon health reaches 0.
         if (health == 0)
         {
-            Debug.Log("Game Over!");
+            /// Debug.Log("Game Over!"); /// Removed and replaced with a UI.
             health = 5;
             score = 0;
             Scene scene = SceneManager.GetActiveScene();
